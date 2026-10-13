@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-zinc-950 font-sans text-zinc-300 antialiased;
+    background-image:
+      radial-gradient(60rem 30rem at 15% -10%, rgba(125, 211, 252, 0.07), transparent 60%),
+      radial-gradient(50rem 28rem at 100% 0%, rgba(167, 139, 250, 0.06), transparent 60%);
+    background-repeat: no-repeat;
+  }
+
+  ::selection {
+    @apply bg-sky-300/30 text-white;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-sky-300;
+    outline-style: solid;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+
+  .card {
+    @apply rounded-2xl border border-zinc-800 bg-zinc-900/50;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium transition-colors;
+  }
+
+  .btn-primary {
+    @apply btn bg-sky-300 text-zinc-950 hover:bg-sky-200;
+  }
+
+  .btn-secondary {
+    @apply btn border border-zinc-700 bg-zinc-900/60 text-zinc-100 hover:border-zinc-500 hover:bg-zinc-800;
+  }
+
+  .chip {
+    @apply inline-flex items-center rounded-md border border-zinc-800 bg-zinc-900 px-2.5 py-1 text-xs font-medium text-zinc-300;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
